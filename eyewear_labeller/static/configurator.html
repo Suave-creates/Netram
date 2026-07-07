@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Natalia Configurator</title>
+    <link rel="icon" href="data:,">
+    <script>
+      if (location.protocol === 'file:') {
+        location.replace('http://127.0.0.1:8765/configurator');
+      }
+    </script>
+    <link rel="stylesheet" href="/static/styles.css?v=20260620-landing2">
+  </head>
+  <body>
+    <main class="app-shell configurator-shell">
+      <header class="toolbar" aria-label="Configurator toolbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div class="brand-model">
+            <a class="app-name brand-home-link" href="/">Natalia</a>
+            <select id="configuratorModelSelect" class="model-select" aria-label="Frame model">
+              <option>VC S19003</option>
+            </select>
+            <span id="configuratorState">Loading</span>
+          </div>
+        </div>
+
+        <a class="action-button toolbar-link" href="/">Menu</a>
+        <a id="configuratorLabellerLink" class="action-button toolbar-link" href="/labeller">Labeller</a>
+        <a id="configuratorMatcherLink" class="action-button toolbar-link" href="/matcher" hidden>Matcher</a>
+        <a id="configuratorLenskartMatcherLink" class="action-button toolbar-link" href="/lenskart-matcher">Lenskart</a>
+        <a class="action-button toolbar-link" href="/parts?type=nose_bridge" hidden>Parts</a>
+        <button id="configuratorFrontButton" class="action-button" type="button">Front</button>
+        <button id="configuratorSaveButton" class="primary-button" type="button">Save</button>
+        <span id="configuratorSaveStatus" class="toolbar-status" aria-live="polite">Not saved</span>
+      </header>
+
+      <section class="configurator-workspace">
+        <section id="configuratorStage" class="configurator-stage" aria-label="3D frame configurator">
+          <div id="frame3dPanel" class="frame3d-panel configurator-render-panel">
+            <canvas id="frame3dCanvas"></canvas>
+            <div id="configuratorProgress" class="frame3d-build-progress" aria-live="polite" hidden>
+              <div class="frame3d-build-progress-head">
+                <strong id="configuratorProgressLabel">Building 3D</strong>
+                <span id="configuratorProgressPercent">0%</span>
+              </div>
+              <div class="frame3d-build-progress-track" aria-hidden="true">
+                <span id="configuratorProgressFill" class="frame3d-build-progress-fill"></span>
+              </div>
+            </div>
+            <div class="frame3d-meta" aria-label="3D source dimensions">
+              <span>CAD/PDF</span>
+            </div>
+          </div>
+        </section>
+
+        <aside id="configuratorDrawer" class="configurator-drawer" aria-label="Frame configurator drawer">
+          <div class="configurator-drawer-header">
+            <div>
+              <h1>Configurator</h1>
+              <span id="configuratorSummary">Select parts and finish</span>
+            </div>
+            <button id="configuratorDrawerToggle" class="panel-collapse" type="button" title="Collapse configurator" aria-expanded="true">Hide</button>
+          </div>
+
+          <div class="configurator-tabs" role="tablist" aria-label="Configurator sections">
+            <button class="is-active" type="button" data-configurator-tab="parts">Parts</button>
+            <button type="button" data-configurator-tab="finish">Finish</button>
+            <button type="button" data-configurator-tab="lens">Lens</button>
+            <button type="button" data-configurator-tab="specs">Specs</button>
+            <button type="button" data-configurator-tab="metal">Material</button>
+          </div>
+
+          <div class="configurator-scroll">
+            <section class="configurator-panel is-active" data-configurator-panel="parts">
+              <div class="panel-heading compact-heading">
+                <h2>Frame parts</h2>
+                <span id="configuratorPartStatus">Loading</span>
+              </div>
+              <div id="configuratorPartSections" class="configurator-part-sections" aria-label="Child part sections"></div>
+            </section>
+
+            <section class="configurator-panel" data-configurator-panel="finish">
+              <div class="panel-heading compact-heading">
+                <h2>Frame finish</h2>
+                <span id="materialReadout">Default</span>
+              </div>
+              <div id="materialPresetGrid" class="material-preset-grid" role="listbox" aria-label="Frame material presets"></div>
+            </section>
+
+            <section class="configurator-panel" data-configurator-panel="lens">
+              <div class="panel-heading compact-heading">
+                <h2>Lens tint</h2>
+                <span id="lensReadout">Default</span>
+              </div>
+              <div id="lensTintGrid" class="lens-tint-grid" role="listbox" aria-label="Lens tint presets"></div>
+              <button id="polarizedToggle" class="polarized-toggle" type="button" aria-pressed="false">
+                <strong>Polarized</strong>
+                <span>Off</span>
+              </button>
+            </section>
+
+            <section class="configurator-panel" data-configurator-panel="specs">
+              <div class="panel-heading compact-heading">
+                <h2>Specs</h2>
+                <span id="specReadout">Ready</span>
+              </div>
+              <div id="specControlGrid" class="spec-control-grid" aria-label="Frame and lens specs"></div>
+            </section>
+
+            <section class="configurator-panel" data-configurator-panel="metal">
+              <div class="panel-heading compact-heading">
+                <h2>Material selector</h2>
+                <span id="materialSelectorReadout">Answer to get a suggestion</span>
+              </div>
+              <div id="materialSelector" class="material-selector" aria-label="Base material selector"></div>
+              <details class="metal-guide-details">
+                <summary>Full QC reference matrix</summary>
+                <div id="metalGuide" class="metal-guide" aria-label="Frame metallurgy QC matrix"></div>
+              </details>
+            </section>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "/static/vendor/three/three.module.js"
+        }
+      }
+    </script>
+    <script type="module" src="/static/configurator.js?v=20260620-landing2"></script>
+  </body>
+</html>

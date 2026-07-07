@@ -1,0 +1,22 @@
+{
+  "name": "@nexs/eyewear-fit-client",
+  "version": "1.0.0",
+  "description": "Thin fetch client for eyewear-fit-api",
+  "type": "module",
+  "main": "eyewear-fit-client.js",
+  "exports": {
+    ".": "./eyewear-fit-client.js"
+  },
+  "files": [
+    "eyewear-fit-client.js"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "eyewear",
+    "fit",
+    "nexs"
+  ],
+  "license": "UNLICENSED"
+}

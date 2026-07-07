@@ -1,0 +1,46 @@
+{
+  "frameParameters": {
+    "baseCurve": 4,
+    "bridgeWidth_mm": 19,
+    "dbl_mm": 19,
+    "faceFormWrapAngle_deg": 6,
+    "frontFrameWidth_mm": 135.4,
+    "hingePlacement_mm": 3.5,
+    "hingePosition_mm": 58,
+    "lensGrooveDepth_mm": 0.7,
+    "lensGrooveWidth_mm": 0.9,
+    "lensHeight_mm": 42.4,
+    "lensWidth_mm": 54,
+    "nosePadSpacing_mm": 17,
+    "pantoscopicAngle_deg": 8,
+    "rimThickness_mm": 2.1,
+    "splayAngle_deg": 5,
+    "templeAngle_deg": 92,
+    "templeCurveBendPoint_mm": 82,
+    "templeCurveDrop_mm": 28,
+    "templeHeightPosition_mm": -6,
+    "templeLength_mm": 145,
+    "templeThickness_mm": 1.5,
+    "tipDropAngle_deg": 12,
+    "weight_g": 23.5
+  },
+  "lensId": "g15-smoke",
+  "materialId": "gunmetal-grey",
+  "modelId": "VC S19003",
+  "polarized": true,
+  "savedAs": "VC S19003-01",
+  "selectedPartIdsByType": {
+    "nose_bridge": "nose_bridge--ss-26--vc-s13110-nb",
+    "nose_pad": "nose_pad--manual--infinity-logo-translucent",
+    "nosearm": "nosearm--manual--long-nosearm",
+    "temple": "temple--ss-26--t5",
+    "temple_tip": "temple_tip--ss26-bend-tips--tt3-bend"
+  },
+  "specs": {
+    "faceWrap": 6,
+    "lensIndex": 1.59,
+    "pantoscopicTilt": 8,
+    "rxPower": 0
+  },
+  "updatedAt": "2026-06-20T12:16:45.148Z"
+}

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Natalia Labeller</title>
+    <link rel="stylesheet" href="/static/styles.css?v=20260620-landing2">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="toolbar" aria-label="Labeller toolbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div class="brand-model">
+            <a class="app-name brand-home-link" href="/">Natalia</a>
+            <select id="modelSelect" class="model-select" aria-label="Frame model">
+              <option>VC S19003</option>
+            </select>
+            <span id="saveState">Loading</span>
+          </div>
+        </div>
+
+        <div class="tool-group" role="group" aria-label="Drawing tools">
+          <button class="tool-button is-active" type="button" data-mode="select">Select</button>
+          <button class="tool-button" type="button" data-mode="rect">Rect</button>
+          <button class="tool-button" type="button" data-mode="polygon">Polygon</button>
+        </div>
+
+        <div class="tool-group" role="group" aria-label="Workspace view">
+          <button class="tool-button is-active" type="button" data-workspace-view="labels">Labels</button>
+          <button class="tool-button" type="button" data-workspace-view="3d">3D</button>
+        </div>
+
+        <label class="field">
+          <span>Component</span>
+          <select id="componentSelect"></select>
+        </label>
+
+        <label class="field field-small">
+          <span>View</span>
+          <select id="viewSelect">
+            <option value="front-main">front-main</option>
+            <option value="front-detail">front-detail</option>
+            <option value="top">top</option>
+            <option value="side-left">side-left</option>
+            <option value="side-right">side-right</option>
+            <option value="detail">detail</option>
+            <option value="former-detail">former-detail</option>
+            <option value="other">other</option>
+          </select>
+        </label>
+
+        <label class="field group-name">
+          <span>Group name</span>
+          <input id="groupName" type="text" value="Physical component">
+        </label>
+
+        <button id="groupButton" class="action-button" type="button">Group</button>
+        <button id="undoButton" class="action-button" type="button" title="Undo last edit (Cmd+Z)">Undo</button>
+        <button id="deleteButton" class="danger-button" type="button">Delete</button>
+        <a class="action-button toolbar-link" href="/">Menu</a>
+        <a id="configuratorLink" class="action-button toolbar-link" href="/configurator">Configurator</a>
+        <a id="partsLink" class="action-button toolbar-link" href="/parts?type=nose_bridge" hidden>Parts</a>
+        <a id="matcherLink" class="action-button toolbar-link" href="/matcher" hidden>Matcher</a>
+        <a id="lenskartMatcherLink" class="action-button toolbar-link" href="/lenskart-matcher">Lenskart</a>
+        <button id="saveButton" class="primary-button" type="button">Save</button>
+      </header>
+
+      <section class="workspace">
+        <div id="viewport" class="viewport" aria-label="VC S19003 drawing workspace">
+          <div id="stage" class="stage">
+            <img id="sourceImage" src="" alt="VC S19003 source drawing">
+            <svg id="overlay" xmlns="http://www.w3.org/2000/svg">
+              <g id="labelsLayer"></g>
+              <g id="draftLayer"></g>
+            </svg>
+          </div>
+        </div>
+
+        <div id="frame3dPanel" class="frame3d-panel" aria-label="VC S19003 3D frame" hidden>
+          <canvas id="frame3dCanvas"></canvas>
+          <div id="noseBridgeCompare" class="part-compare" aria-label="Nose bridge before and after" hidden>
+            <div class="part-compare-buttons" role="group" aria-label="Nose bridge compare">
+              <button id="noseBridgeBeforeButton" class="compare-button" type="button" data-nose-bridge-compare="before">Before</button>
+              <button id="noseBridgeAfterButton" class="compare-button" type="button" data-nose-bridge-compare="after">After</button>
+            </div>
+            <span id="noseBridgeCompareStatus" class="part-compare-status"></span>
+          </div>
+          <div id="frame3dBuildProgress" class="frame3d-build-progress" aria-live="polite" hidden>
+            <div class="frame3d-build-progress-head">
+              <strong id="frame3dBuildProgressLabel">Building 3D</strong>
+              <span id="frame3dBuildProgressPercent">0%</span>
+            </div>
+            <div class="frame3d-build-progress-track" aria-hidden="true">
+              <span id="frame3dBuildProgressFill" class="frame3d-build-progress-fill"></span>
+            </div>
+          </div>
+          <div class="frame3d-actions" aria-label="3D front view actions">
+            <button id="frontViewButton" class="action-button" type="button">Front</button>
+            <button id="share3dButton" class="action-button" type="button">Share</button>
+            <button id="download3dButton" class="action-button" type="button">Download</button>
+          </div>
+          <div class="frame3d-meta" aria-label="3D source dimensions">
+            <span>CAD/PDF</span>
+          </div>
+        </div>
+
+        <aside id="rightPanel" class="inspector right-panel" aria-label="Right panel">
+          <div id="labelInspectorView" class="label-inspector-view">
+            <section class="panel">
+              <div class="panel-heading">
+                <h2>Selection</h2>
+                <span id="selectionCount">0</span>
+              </div>
+              <div id="selectionDetails" class="selection-details"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-heading">
+                <h2>Groups</h2>
+                <span id="groupCount">0</span>
+              </div>
+              <div id="groupList" class="data-list"></div>
+            </section>
+
+            <section class="panel panel-flex">
+              <div class="panel-heading">
+                <h2>Labels</h2>
+                <span id="labelCount">0</span>
+              </div>
+              <div id="labelList" class="data-list label-list"></div>
+            </section>
+          </div>
+
+          <section id="partDrawer" class="part-drawer" aria-label="Frame child parts" hidden>
+            <button id="partDrawerToggle" class="part-drawer-toggle" type="button" aria-expanded="true" aria-controls="partDrawerContent">Parts</button>
+            <div id="partDrawerContent" class="part-drawer-content">
+              <div class="part-drawer-header">
+                <div>
+                  <h2>Frame parts</h2>
+                  <span id="partDrawerStatus">Select one per component</span>
+                </div>
+              </div>
+
+              <section class="part-drawer-section is-expanded" data-part-type="nose_bridge">
+                <div class="part-section-heading">
+                  <button class="part-section-toggle" type="button" data-part-type="nose_bridge" aria-expanded="true" aria-controls="noseBridgePartList">
+                    <span>Nose bridge</span>
+                  </button>
+                  <span id="noseBridgePartStatus" class="part-status">Loading</span>
+                </div>
+                <select id="noseBridgePartSelect" class="part-native-select" aria-label="Nose bridge"></select>
+                <div id="noseBridgePartList" class="part-card-list" role="listbox" aria-label="Nose bridge parts"></div>
+              </section>
+
+              <div id="partDrawerModuleList" class="part-drawer-modules" aria-label="Other child part modules"></div>
+            </div>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "/static/vendor/three/three.module.js"
+        }
+      }
+    </script>
+    <script type="module" src="/static/app.js?v=20260620-solidtip1"></script>
+  </body>
+</html>

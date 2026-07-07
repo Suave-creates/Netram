@@ -1,0 +1,21 @@
+.git
+.vercel
+.playwright-mcp
+.pytest_cache
+node_modules
+menu-desktop.png
+menu-mobile.png
+natalia-landing-desktop.png
+natalia-landing-mobile.png
+**/.pytest_cache
+**/__pycache__
+**/*.py[cod]
+.DS_Store
+**/.DS_Store
+Metal Frame Design Studio
+docs
+eyewear_labeller/tests
+frame_matcher_engine
+data/lenskart_cache/*/raw
+data/lenskart_cache/*/raw/**
+data/**/.DS_Store

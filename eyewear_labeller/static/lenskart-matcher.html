@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Natalia Lenskart Matcher</title>
+    <link rel="stylesheet" href="/static/styles.css?v=20260620-landing2">
+  </head>
+  <body>
+    <main class="app-shell matcher-shell">
+      <header class="toolbar" aria-label="Lenskart matcher toolbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div class="brand-model">
+            <a class="app-name brand-home-link" href="/">Natalia</a>
+            <select id="modelSelect" class="model-select" aria-label="Frame model">
+              <option>VC S19003</option>
+            </select>
+            <span id="pageState">Loading</span>
+          </div>
+        </div>
+
+        <a class="action-button toolbar-link" href="/">Menu</a>
+        <a id="labellerLink" class="action-button toolbar-link" href="/labeller">Labeller</a>
+        <a id="localMatcherLink" class="action-button toolbar-link" href="/matcher" hidden>Local matcher</a>
+        <a id="configuratorLink" class="action-button toolbar-link" href="/configurator">Configurator</a>
+        <button id="frontViewButton" class="action-button" type="button">Front</button>
+        <button id="downloadFrontViewButton" class="action-button" type="button">Download</button>
+      </header>
+
+      <section class="matcher-workspace">
+        <section class="matcher-preview" aria-label="3D front render">
+          <div id="matcher3dPanel" class="frame3d-panel matcher-render-panel">
+            <canvas id="matcher3dCanvas"></canvas>
+            <div id="renderUnavailable" class="render-unavailable" hidden>3D unavailable</div>
+            <div class="frame3d-meta" aria-label="3D render metadata">
+              <span id="renderModel">VC S19003</span>
+              <span>front view</span>
+              <span>Lenskart input</span>
+            </div>
+          </div>
+
+          <section class="panel beauty-panel">
+            <div class="panel-heading">
+              <h2>Input image</h2>
+              <span>JPG</span>
+            </div>
+            <div class="beauty-preview-wrap">
+              <img id="beautyRenderPreview" alt="3D front view input">
+            </div>
+          </section>
+        </section>
+
+        <aside class="inspector matcher-inspector" aria-label="Lenskart matcher controls and results">
+          <section class="panel">
+            <div class="panel-heading">
+              <h2>Dataset</h2>
+              <span id="cacheCount">0</span>
+            </div>
+            <div class="matcher-form lenskart-cache-panel">
+              <strong id="cacheTitle">Vincent Chase sunglasses</strong>
+              <small id="cachePath" class="input-note">Loading cache</small>
+              <small class="input-note">One-time deterministic sample from Lenskart product data.</small>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-heading">
+              <h2>Match</h2>
+              <span id="matchMode">hybrid</span>
+            </div>
+            <div class="matcher-form">
+              <div class="dimension-grid">
+                <label class="field">
+                  <span>A size</span>
+                  <input id="aSize" type="number" min="0" step="0.1" inputmode="decimal">
+                </label>
+                <label class="field">
+                  <span>B size</span>
+                  <input id="bSize" type="number" min="0" step="0.1" inputmode="decimal">
+                </label>
+                <label class="field">
+                  <span>DBL</span>
+                  <input id="dbl" type="number" min="0" step="0.1" inputmode="decimal">
+                </label>
+              </div>
+              <div class="dimension-grid compact-grid">
+                <label class="field">
+                  <span>Top K</span>
+                  <input id="topK" type="number" min="1" max="20" step="1" value="5">
+                </label>
+                <label class="check-field">
+                  <input id="useVlm" type="checkbox" checked>
+                  <span>VLM tie</span>
+                </label>
+              </div>
+              <button id="runMatchButton" class="primary-button match-button" type="button">Run Lenskart match</button>
+              <small id="generatedLensMaskStatus" class="input-note">Generating front-view JPG</small>
+            </div>
+          </section>
+
+          <section class="panel panel-flex matcher-results-panel">
+            <div class="panel-heading">
+              <h2>Matches</h2>
+              <span id="matchCount">0</span>
+            </div>
+            <div id="matchResults" class="data-list match-results"></div>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "/static/vendor/three/three.module.js"
+        }
+      }
+    </script>
+    <script type="module" src="/static/lenskart-matcher.js?v=20260620-landing2"></script>
+  </body>
+</html>

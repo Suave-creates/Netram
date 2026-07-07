@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Natalia Parts</title>
+    <link rel="stylesheet" href="/static/styles.css?v=20260620-landing2">
+  </head>
+  <body>
+    <main class="app-shell parts-shell">
+      <header class="toolbar" aria-label="Parts toolbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div class="brand-model">
+            <a class="app-name brand-home-link" href="/">Natalia</a>
+            <span class="brand-context">Child parts</span>
+            <span id="pageState">Loading</span>
+          </div>
+        </div>
+
+        <a class="action-button toolbar-link" href="/">Menu</a>
+        <a class="action-button toolbar-link" href="/labeller">Labeller</a>
+        <a class="action-button toolbar-link" href="/matcher" hidden>Matcher</a>
+        <a class="action-button toolbar-link" href="/lenskart-matcher">Lenskart</a>
+
+        <label class="field parts-search">
+          <span>Search</span>
+          <input id="partSearch" type="search" placeholder="Part ID or name">
+        </label>
+      </header>
+
+      <section class="parts-workspace">
+        <aside class="inspector parts-sidebar" aria-label="Child part library">
+          <section class="panel">
+            <div class="panel-heading">
+              <h2>Modules</h2>
+              <span id="typeCount">0</span>
+            </div>
+            <div id="partTypeTabs" class="data-list part-type-tabs"></div>
+          </section>
+
+          <section class="panel panel-flex">
+            <div class="panel-heading">
+              <h2>Parts</h2>
+              <span id="partCount">0</span>
+            </div>
+            <div id="partList" class="data-list part-list"></div>
+          </section>
+        </aside>
+
+        <section class="parts-main" aria-label="Selected child part">
+          <section class="part-preview-section">
+            <div class="panel-heading">
+              <h2 id="partPreviewTitle">Preview</h2>
+              <span id="partReadiness">-</span>
+            </div>
+            <iframe id="partPreview" class="part-preview" title="Child part preview"></iframe>
+            <div id="partPreviewFallback" class="selection-details" hidden></div>
+          </section>
+
+          <aside class="inspector part-detail-sidebar" aria-label="Child part details">
+            <section class="panel">
+              <div class="panel-heading">
+                <h2>Source</h2>
+                <span id="partVersion">v1</span>
+              </div>
+              <div id="partSourceDetails" class="selection-details"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-heading">
+                <h2>Metadata</h2>
+                <span id="missingCount">0</span>
+              </div>
+              <div id="partMetadata" class="selection-details"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-heading">
+                <h2>Assets</h2>
+                <span id="assetCount">0</span>
+              </div>
+              <div id="partAssetLinks" class="parts-actions"></div>
+            </section>
+          </aside>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="/static/parts.js?v=20260620-landing2"></script>
+  </body>
+</html>

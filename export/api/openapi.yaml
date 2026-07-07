@@ -1,0 +1,194 @@
+openapi: 3.1.0
+info:
+  title: Eyewear Fit API
+  version: 1.0.0
+  description: |
+    Indian eyewear fit guideline audit, population comparison, and LLM reports.
+    Source: `../eyewear-fit-api`. Live docs when running: `http://127.0.0.1:8000/docs`.
+
+    **Not on API:** batch return-risk scoring (`learnFromRows` / `scoreBatchRows`) runs
+    client-side in `../eyewear-studio/src/llmTraining.js`. Use `/api/llm/chat` for
+    narratives after local scoring.
+
+servers:
+  - url: http://127.0.0.1:8000
+    description: Local docker compose / uvicorn
+
+paths:
+  /:
+    get:
+      summary: Service index
+      responses:
+        "200":
+          description: Endpoint map
+
+  /health:
+    get:
+      summary: Health check
+      responses:
+        "200":
+          description: status, llm_enabled, model, guidelines path
+
+  /api/guidelines:
+    get:
+      summary: Parsed workbook metadata and structured metrics
+      responses:
+        "200":
+          description: sheetIds, sheets, structured
+        "404":
+          description: Guidelines XLSX missing
+
+  /api/guidelines/face-data/latest:
+    get:
+      summary: IJO 2023 LATEST Indian anthropometry
+      responses:
+        "200":
+          description: meta + data object (5 face metric keys)
+
+  /api/guidelines/face-data/baseline:
+    get:
+      summary: Published baseline anthropometry
+      responses:
+        "200":
+          description: data object
+
+  /api/guidelines/refresh-latest:
+    post:
+      summary: Refresh latest Indian anthropometry (Anthropic → OpenAI → demo)
+      responses:
+        "200":
+          description: rows, regions, meta.source (api|demo)
+
+  /api/audit:
+    post:
+      summary: Rule-based audit with sizing suggestions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AuditRequest"
+      responses:
+        "200":
+          description: AuditResponse
+
+  /api/sheets/compare:
+    post:
+      summary: Side-by-side guideline vs population tables (all sheets)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SheetCompareRequest"
+      responses:
+        "200":
+          description: SheetCompareResponse
+
+  /api/sample/upload:
+    post:
+      summary: Upload face sample CSV/XLSX → audit + compare
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        "200":
+          description: fileName, columnsUsed, faceData, audit, sheets
+
+  /api/llm/audit-report:
+    post:
+      summary: LLM narrative audit (rule-based fallback without OPENAI_API_KEY)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LLMAuditRequest"
+      responses:
+        "200":
+          description: report, llm_used, model
+
+  /api/llm/audit-report/stream:
+    post:
+      summary: Streaming LLM audit report (text/plain)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LLMAuditRequest"
+      responses:
+        "200":
+          description: text stream
+
+  /api/llm/chat:
+    post:
+      summary: Context-aware chat (frontend LLM enhance, sizing tips)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LLMChatRequest"
+      responses:
+        "200":
+          description: reply/content/message, llm_used
+
+components:
+  schemas:
+    Sex:
+      type: string
+      enum: [male, female]
+    ActiveDataset:
+      type: string
+      enum: [baseline, latest, sample]
+    AuditRequest:
+      type: object
+      properties:
+        sex:
+          $ref: "#/components/schemas/Sex"
+        active:
+          $ref: "#/components/schemas/ActiveDataset"
+        sample_name:
+          type: string
+        face_data:
+          type: object
+          additionalProperties: true
+    SheetCompareRequest:
+      allOf:
+        - $ref: "#/components/schemas/AuditRequest"
+    LLMAuditRequest:
+      allOf:
+        - $ref: "#/components/schemas/AuditRequest"
+        - type: object
+          properties:
+            question:
+              type: string
+            stream:
+              type: boolean
+              default: false
+    LLMChatRequest:
+      type: object
+      required: [message]
+      properties:
+        message:
+          type: string
+        sex:
+          $ref: "#/components/schemas/Sex"
+        active:
+          $ref: "#/components/schemas/ActiveDataset"
+        sample_name:
+          type: string
+        face_data:
+          type: object
+        history:
+          type: array
+          items:
+            type: object
+            additionalProperties:
+              type: string

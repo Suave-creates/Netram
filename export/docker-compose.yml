@@ -1,0 +1,40 @@
+# Eyewear Fit — one-command API deploy (+ optional static frontend)
+#
+#   cp .env.example .env   # add API keys locally; never commit .env
+#   docker compose up --build api
+#
+# Optional UI (build eyewear-studio first: cd ../eyewear-studio && npm run build):
+#   docker compose --profile frontend up --build
+
+services:
+  api:
+    build:
+      context: ../eyewear-fit-api
+      dockerfile: ../export/Dockerfile.api
+    ports:
+      - "${PORT:-8000}:8000"
+    env_file:
+      - .env
+    environment:
+      GUIDELINES_PATH: /app/data/Eyewear_Fit_Standard_Guidelines.xlsx
+      HOST: 0.0.0.0
+      PORT: 8000
+    volumes:
+      - ./data:/app/data:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  frontend:
+    image: nginx:alpine
+    profiles: ["frontend"]
+    ports:
+      - "${FRONTEND_PORT:-5173}:80"
+    volumes:
+      - ../eyewear-studio/dist:/usr/share/nginx/html:ro
+    depends_on:
+      api:
+        condition: service_healthy

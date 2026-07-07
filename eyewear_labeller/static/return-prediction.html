@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Natalia Return Prediction</title>
+    <link rel="icon" href="data:,">
+    <script>
+      if (location.protocol === 'file:') {
+        document.write('<link rel="stylesheet" href="styles.css?v=20260620-landing3">');
+      } else {
+        document.write('<link rel="stylesheet" href="/static/styles.css?v=20260620-landing3">');
+      }
+    </script>
+  </head>
+  <body class="return-body">
+    <main class="app-shell return-shell">
+      <header class="toolbar" aria-label="Return prediction toolbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div class="brand-model">
+            <a class="app-name brand-home-link" href="/">Natalia</a>
+            <span class="brand-context">Return prediction</span>
+            <span id="returnModelStatus">Loading</span>
+          </div>
+        </div>
+
+        <a id="returnMenuLink" class="action-button toolbar-link" href="/">Menu</a>
+        <a id="returnConfiguratorLink" class="action-button toolbar-link" href="/configurator">Configurator</a>
+        <a id="returnLenskartLink" class="action-button toolbar-link" href="/lenskart-matcher">Lenskart</a>
+        <label class="field return-model-field">
+          <span>Model</span>
+          <select id="returnModelSelect" class="model-select" aria-label="Frame model">
+            <option>VC S19003</option>
+          </select>
+        </label>
+      </header>
+
+      <section class="return-workspace" aria-label="Return prediction">
+        <section class="return-summary">
+          <div class="return-hero-card">
+            <div class="return-hero-copy">
+              <span class="menu-kicker">Prediction model</span>
+              <h1>Return prediction</h1>
+              <p>
+                Estimate 30-day return-risk from frame width, frame height, A size,
+                temple length, and DBL before a frame moves deeper into launch review.
+              </p>
+            </div>
+            <aside class="return-signal-card" aria-label="Selected model return-risk signal">
+              <span class="return-signal-label">Risk signal</span>
+              <strong id="returnHeroModel">VC S19003</strong>
+              <div class="return-meter" aria-hidden="true">
+                <span class="return-meter-fill"></span>
+              </div>
+              <small>Current model dimensions loaded into validation inputs</small>
+            </aside>
+          </div>
+          <div class="return-metrics" aria-label="Return prediction facts">
+            <article>
+              <span>Training rows</span>
+              <strong>624</strong>
+              <small>frame QC records</small>
+            </article>
+            <article>
+              <span>Target</span>
+              <strong>30-day</strong>
+              <small>return rate</small>
+            </article>
+            <article>
+              <span>Runtime</span>
+              <strong>Local</strong>
+              <small>client-side scoring</small>
+            </article>
+          </div>
+        </section>
+
+        <aside class="return-panels" aria-label="Return prediction details">
+          <section class="panel return-validation-panel">
+            <div class="panel-heading">
+              <h2>Validate new frame</h2>
+              <span id="returnInputSource">Selected model</span>
+            </div>
+            <form id="returnValidationForm" class="return-input-grid">
+              <label class="field">
+                <span>Frame width</span>
+                <input id="returnFrameWidth" name="frameWidth" type="number" min="0" step="0.1" inputmode="decimal">
+              </label>
+              <label class="field">
+                <span>Frame height</span>
+                <input id="returnFrameHeight" name="frameHeight" type="number" min="0" step="0.1" inputmode="decimal">
+              </label>
+              <label class="field">
+                <span>A size</span>
+                <input id="returnASize" name="aSize" type="number" min="0" step="0.1" inputmode="decimal">
+              </label>
+              <label class="field">
+                <span>Temple length</span>
+                <input id="returnTempleLength" name="templeLength" type="number" min="0" step="0.1" inputmode="decimal">
+              </label>
+              <label class="field">
+                <span>DBL</span>
+                <input id="returnDbl" name="dbl" type="number" min="0" step="0.1" inputmode="decimal">
+              </label>
+            </form>
+            <div class="return-input-actions">
+              <button id="returnUseModelButton" class="action-button" type="button">Use selected model</button>
+              <small class="return-input-note">Inputs stay editable for new-frame variants.</small>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-heading">
+              <h2>Data source</h2>
+              <span>CSV</span>
+            </div>
+            <p class="return-copy">
+              The export includes <strong>frame-qc-parameters.csv</strong>, which
+              pairs frame dimensions with <strong>30 day returns_Y</strong>.
+            </p>
+          </section>
+
+          <section class="panel">
+            <div class="panel-heading">
+              <h2>Integration</h2>
+              <span>Export</span>
+            </div>
+            <p class="return-copy">
+              Batch scoring is documented as client-side scoring through
+              <strong>learnFromRows</strong>, <strong>scoreBatchRows</strong>, and
+              <strong>validateInput</strong>. The API can still add LLM sizing
+              explanations after local scoring.
+            </p>
+          </section>
+        </aside>
+      </section>
+    </main>
+    <script>
+      const returnPredictionScript = document.createElement('script');
+      returnPredictionScript.type = 'module';
+      returnPredictionScript.src = location.protocol === 'file:'
+        ? 'return-prediction.js?v=20260620-landing3'
+        : '/static/return-prediction.js?v=20260620-landing3';
+      document.body.appendChild(returnPredictionScript);
+    </script>
+  </body>
+</html>

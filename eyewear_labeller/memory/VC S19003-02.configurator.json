@@ -1,0 +1,25 @@
+{
+  "frameParameters": {
+    "bridgeWidth_mm": 18,
+    "lensWidth_mm": 52,
+    "rimThickness_mm": 2.1,
+    "templeLength_mm": 140,
+    "templeThickness_mm": 3.2
+  },
+  "lensId": "g15-smoke",
+  "materialId": "gunmetal-grey",
+  "modelId": "VC S19003",
+  "polarized": true,
+  "savedAs": "VC S19003-02",
+  "selectedPartIdsByType": {
+    "temple": "temple--ss-26--t5",
+    "temple_tip": "temple_tip--acetate--tt3-bend"
+  },
+  "specs": {
+    "lensIndex": 1.65,
+    "pantoscopicTiltDeg": 10.5,
+    "rxPower": 0,
+    "wrapDeg": 2
+  },
+  "updatedAt": "2026-06-20T00:00:00.000Z"
+}

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Natalia Menu</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="/static/styles.css?v=20260620-landing2">
+  </head>
+  <body class="menu-body">
+    <main class="menu-shell">
+      <header class="menu-toolbar" aria-label="Natalia menu">
+        <div class="brand menu-brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div class="brand-model">
+            <a class="app-name brand-home-link" href="/">Natalia</a>
+            <span id="menuState">Loading</span>
+          </div>
+        </div>
+
+        <label class="field menu-model-field">
+          <span>Model</span>
+          <select id="menuModelSelect" class="model-select" aria-label="Frame model">
+            <option>VC S19003</option>
+          </select>
+        </label>
+      </header>
+
+      <section class="menu-workbench" aria-label="Natalia landing">
+        <aside class="menu-model-panel" aria-label="Current frame">
+          <div class="menu-model-heading">
+            <span class="menu-kicker">Frame studio</span>
+            <h1>Natalia</h1>
+            <strong id="menuModelTitle" class="menu-current-model">VC S19003</strong>
+            <span class="menu-model-note">Design bench</span>
+          </div>
+          <div class="menu-preview">
+            <img id="menuPreviewImage" alt="Selected frame drawing">
+            <span class="menu-preview-glint" aria-hidden="true"></span>
+          </div>
+          <div class="menu-source-grid" aria-label="Current frame source files">
+            <a id="menuPdfLink" class="menu-source-link" href="/source/pdf/VC%20S19003.pdf">PDF</a>
+            <a id="menuCadLink" class="menu-source-link" href="/source/cad/VC%20S19003.dwg">CAD</a>
+            <a id="menuMemoryLink" class="menu-source-link" href="/api/memory/VC%20S19003">Memory</a>
+            <a id="menuPhysicsLink" class="menu-source-link" href="/api/physics">Physics</a>
+          </div>
+        </aside>
+
+        <section id="menuPages" class="menu-pages" aria-label="Pages">
+          <a class="menu-page-link is-primary" data-menu-link="labeller" href="/labeller">
+            <span class="menu-page-index">Draw</span>
+            <span class="menu-page-copy">
+              <strong>Labeller</strong>
+              <small>Component labels and grouped parts</small>
+            </span>
+          </a>
+
+          <a class="menu-page-link" data-menu-link="configurator" href="/configurator">
+            <span class="menu-page-index">Build</span>
+            <span class="menu-page-copy">
+              <strong>Configurator</strong>
+              <small>3D frame parts, finish, lens, and specs</small>
+            </span>
+          </a>
+
+          <a class="menu-page-link" data-menu-link="lenskart" href="/lenskart-matcher">
+            <span class="menu-page-index">Match</span>
+            <span class="menu-page-copy">
+              <strong>Lenskart matcher</strong>
+              <small>Vincent Chase sample matching workflow</small>
+            </span>
+          </a>
+
+          <a class="menu-page-link" data-menu-link="return-prediction" href="/return-prediction">
+            <span class="menu-page-index">Predict</span>
+            <span class="menu-page-copy">
+              <strong>Return prediction</strong>
+              <small>30-day return-risk scoring from frame dimensions</small>
+            </span>
+          </a>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="/static/menu.js?v=20260620-landing3"></script>
+  </body>
+</html>

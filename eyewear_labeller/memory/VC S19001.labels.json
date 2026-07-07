@@ -1,0 +1,892 @@
+{
+  "groups": [
+    {
+      "component": "rim",
+      "id": "group-front-right-rim",
+      "labelIds": [
+        "label-front-main-right-rim",
+        "label-front-detail-right-rim"
+      ],
+      "name": "Right rim visible shapes (front-view viewer-left)",
+      "notes": "Wearer right rim. In front views this is seen on the viewer-left side."
+    },
+    {
+      "component": "rim",
+      "id": "group-front-left-rim",
+      "labelIds": [
+        "label-front-main-left-rim",
+        "label-front-detail-left-rim"
+      ],
+      "name": "Left rim visible shapes (front-view viewer-right)",
+      "notes": "Wearer left rim. In front views this is seen on the viewer-right side."
+    },
+    {
+      "component": "nose_bridge",
+      "id": "group-nose-bridge",
+      "labelIds": [
+        "label-front-main-nose-bridge",
+        "label-front-detail-nose-bridge",
+        "label-bridge-detail-top"
+      ],
+      "name": "Nose bridge VC S5158 visible shapes",
+      "notes": "Bridge labels use the part-table nose bridge cue VC S5158 and the DBL/front-detail callouts."
+    },
+    {
+      "component": "temple",
+      "id": "group-temple-upper",
+      "labelIds": [
+        "label-top-upper-temple",
+        "label-side-left-temple"
+      ],
+      "name": "Upper/left temple visible shapes",
+      "notes": "Top-view temple side plus the left side projection."
+    },
+    {
+      "component": "temple",
+      "id": "group-temple-lower",
+      "labelIds": [
+        "label-top-lower-temple",
+        "label-side-right-temple"
+      ],
+      "name": "Lower/right temple visible shapes",
+      "notes": "Top-view temple side plus the right side projection."
+    },
+    {
+      "component": "temple_tip",
+      "id": "group-temple-tips",
+      "labelIds": [
+        "label-top-left-temple-tip",
+        "label-top-right-temple-tip",
+        "label-side-left-temple-tip",
+        "label-side-right-temple-tip"
+      ],
+      "name": "Temple tip visible shapes",
+      "notes": "Bent tip regions from the side projections; construction/dotted extensions are excluded."
+    },
+    {
+      "component": "hinge_joint",
+      "id": "group-hinge-rim-locks",
+      "labelIds": [
+        "label-front-main-right-rim-lock",
+        "label-front-main-left-rim-lock",
+        "label-top-upper-hinge",
+        "label-top-lower-hinge",
+        "label-side-left-hinge",
+        "label-side-right-hinge"
+      ],
+      "name": "Hinge / rim-lock junctions",
+      "notes": "Outer rim split, rim-lock, end-piece and hinge zones. These are connected to the rims and temples."
+    },
+    {
+      "component": "browbar",
+      "id": "group-browbar",
+      "labelIds": [
+        "label-user-1781939365618-0c8e26"
+      ],
+      "name": "Browbar visible shapes",
+      "notes": ""
+    }
+  ],
+  "labels": [
+    {
+      "component": "rim",
+      "groupId": "group-front-right-rim",
+      "id": "label-front-main-right-rim",
+      "notes": "Wearer right rim. Tightened from corrected VC S19005 and original VC S19003 references.",
+      "points": [
+        {
+          "x": 287.9645326422271,
+          "y": 93.9845908368074
+        },
+        {
+          "x": 645.5363458172612,
+          "y": 413.59326463995814
+        }
+      ],
+      "type": "rect",
+      "view": "front-main"
+    },
+    {
+      "component": "rim",
+      "groupId": "group-front-left-rim",
+      "id": "label-front-main-left-rim",
+      "notes": "Wearer left rim. Tightened from corrected VC S19005 and original VC S19003 references.",
+      "points": [
+        {
+          "x": 715.0465051117044,
+          "y": 90.35128988940687
+        },
+        {
+          "x": 1111.0465051117058,
+          "y": 399.35128988940687
+        }
+      ],
+      "type": "rect",
+      "view": "front-main"
+    },
+    {
+      "component": "nose_bridge",
+      "groupId": "group-nose-bridge",
+      "id": "label-front-main-nose-bridge",
+      "notes": "VC S5158 nose bridge in upper front view, boxed around the central bridge connector.",
+      "points": [
+        {
+          "x": 636.8252650346753,
+          "y": 135.44315663299997
+        },
+        {
+          "x": 743.0654287034137,
+          "y": 196.60328264726928
+        }
+      ],
+      "type": "rect",
+      "view": "front-main"
+    },
+    {
+      "component": "rim_lock",
+      "groupId": "group-hinge-rim-locks",
+      "id": "label-front-main-right-rim-lock",
+      "notes": "Outer viewer-left rim-lock/end-piece at the wearer-right rim edge.",
+      "points": [
+        {
+          "x": 274.93947324560844,
+          "y": 170.5339251150437
+        },
+        {
+          "x": 327.93947324560827,
+          "y": 212.5339251150437
+        }
+      ],
+      "type": "rect",
+      "view": "front-main"
+    },
+    {
+      "component": "rim_lock",
+      "groupId": "group-hinge-rim-locks",
+      "id": "label-front-main-left-rim-lock",
+      "notes": "Outer viewer-right rim-lock/end-piece at the wearer-left rim edge.",
+      "points": [
+        {
+          "x": 1069.8536628401812,
+          "y": 174.24294306960059
+        },
+        {
+          "x": 1125.8536628401814,
+          "y": 216.24294306960059
+        }
+      ],
+      "type": "rect",
+      "view": "front-main"
+    },
+    {
+      "component": "nose_pad",
+      "groupId": null,
+      "id": "label-front-main-right-nose-pad",
+      "notes": "Wearer-right nose pad and arm visible inside the viewer-left rim.",
+      "points": [
+        {
+          "x": 587.7982560266219,
+          "y": 228.5946730968468
+        },
+        {
+          "x": 643.7982560266219,
+          "y": 312.5946730968468
+        }
+      ],
+      "type": "rect",
+      "view": "front-main"
+    },
+    {
+      "component": "nose_pad",
+      "groupId": null,
+      "id": "label-front-main-left-nose-pad",
+      "notes": "Wearer-left nose pad and arm visible inside the viewer-right rim.",
+      "points": [
+        {
+          "x": 713.5584743437995,
+          "y": 223.9326801010776
+        },
+        {
+          "x": 784.5584743437995,
+          "y": 309.9326801010776
+        }
+      ],
+      "type": "rect",
+      "view": "front-main"
+    },
+    {
+      "component": "temple",
+      "groupId": "group-temple-upper",
+      "id": "label-top-upper-temple",
+      "notes": "Top-view viewer-left temple root at the lower hinge side, kept separate from the curved tip silhouette.",
+      "points": [
+        {
+          "x": 264.81057504705797,
+          "y": 886.1314961029979
+        },
+        {
+          "x": 298.81057504705797,
+          "y": 886.1314961029979
+        },
+        {
+          "x": 297.9373317211584,
+          "y": 1387.0519385058737
+        },
+        {
+          "x": 264.98093728372436,
+          "y": 1392.0878773497573
+        }
+      ],
+      "type": "polygon",
+      "view": "top"
+    },
+    {
+      "component": "temple",
+      "groupId": "group-temple-lower",
+      "id": "label-top-lower-temple",
+      "notes": "Top-view viewer-right temple root at the lower hinge side, kept separate from the curved tip silhouette.",
+      "points": [
+        {
+          "x": 1063.673912759815,
+          "y": 879.89485003135
+        },
+        {
+          "x": 1111.673912759815,
+          "y": 879.89485003135
+        },
+        {
+          "x": 1103.9654156931695,
+          "y": 1369.4592083050513
+        },
+        {
+          "x": 1073.1769436310087,
+          "y": 1368.7365675132935
+        }
+      ],
+      "type": "polygon",
+      "view": "top"
+    },
+    {
+      "component": "temple_tip",
+      "groupId": "group-temple-tips",
+      "id": "label-top-left-temple-tip",
+      "notes": "Top-view viewer-left TT4 temple-tip silhouette, learned from corrected VC S19005 top-view tip labels.",
+      "points": [
+        {
+          "x": 351.95771879332193,
+          "y": 472.76757071021166
+        },
+        {
+          "x": 443.95771879332193,
+          "y": 472.76757071021166
+        },
+        {
+          "x": 437.95771879332193,
+          "y": 508.76757071021166
+        },
+        {
+          "x": 408.95771879332193,
+          "y": 570.7675707102117
+        },
+        {
+          "x": 375.95771879332193,
+          "y": 656.7675707102117
+        },
+        {
+          "x": 319.348765661715,
+          "y": 727.4737845467814
+        },
+        {
+          "x": 308.6930622364506,
+          "y": 907.2358882552654
+        },
+        {
+          "x": 263.14108847784513,
+          "y": 916.4186044082769
+        },
+        {
+          "x": 273.92462021873246,
+          "y": 742.2872042513823
+        },
+        {
+          "x": 299.2213470888506,
+          "y": 667.703155791281
+        },
+        {
+          "x": 350.95771879332193,
+          "y": 590.7675707102117
+        }
+      ],
+      "type": "polygon",
+      "view": "top"
+    },
+    {
+      "component": "temple_tip",
+      "groupId": "group-temple-tips",
+      "id": "label-top-right-temple-tip",
+      "notes": "Top-view viewer-right TT4 temple-tip silhouette, learned from corrected VC S19005 top-view tip labels.",
+      "points": [
+        {
+          "x": 892.7366715380333,
+          "y": 486.37348332140596
+        },
+        {
+          "x": 980.4998862146593,
+          "y": 482.58816971344334
+        },
+        {
+          "x": 1030.804436497165,
+          "y": 586.9380159422931
+        },
+        {
+          "x": 1090.0581153155683,
+          "y": 699.2365287330472
+        },
+        {
+          "x": 1115.0737502196496,
+          "y": 904.9915142050457
+        },
+        {
+          "x": 1073.0737502196487,
+          "y": 904.9915142050457
+        },
+        {
+          "x": 1063.0737502196487,
+          "y": 794.9915142050457
+        },
+        {
+          "x": 1021.0737502196482,
+          "y": 684.9915142050457
+        },
+        {
+          "x": 975.0737502196482,
+          "y": 589.9915142050457
+        }
+      ],
+      "type": "polygon",
+      "view": "top"
+    },
+    {
+      "component": "hinge_joint",
+      "groupId": "group-hinge-rim-locks",
+      "id": "label-top-upper-hinge",
+      "notes": "Top-view viewer-left hinge/rim-lock cluster at the temple root.",
+      "points": [
+        {
+          "x": 262.8013062939853,
+          "y": 1311.880445077573
+        },
+        {
+          "x": 302.8013062939851,
+          "y": 1376.8804450775729
+        }
+      ],
+      "type": "rect",
+      "view": "top"
+    },
+    {
+      "component": "hinge_joint",
+      "groupId": "group-hinge-rim-locks",
+      "id": "label-top-lower-hinge",
+      "notes": "Top-view viewer-right hinge/rim-lock cluster at the temple root.",
+      "points": [
+        {
+          "x": 1057.636013751212,
+          "y": 1259.847114941303
+        },
+        {
+          "x": 1121.4335020766364,
+          "y": 1361.347944838175
+        }
+      ],
+      "type": "rect",
+      "view": "top"
+    },
+    {
+      "component": "nose_pad",
+      "groupId": null,
+      "id": "label-top-nose-pad-upper",
+      "notes": "Lower top/front view wearer-right nose pad and nose-arm shape near the rim edge.",
+      "points": [
+        {
+          "x": 585.6432978360072,
+          "y": 1358.3240499496126
+        },
+        {
+          "x": 657.6432978360072,
+          "y": 1442.3240499496126
+        }
+      ],
+      "type": "rect",
+      "view": "top"
+    },
+    {
+      "component": "nose_pad",
+      "groupId": null,
+      "id": "label-top-nose-pad-lower",
+      "notes": "Lower top/front view wearer-left nose pad and nose-arm shape near the rim edge.",
+      "points": [
+        {
+          "x": 712.6143626749661,
+          "y": 1352.176473355863
+        },
+        {
+          "x": 790.6143626749661,
+          "y": 1436.176473355863
+        }
+      ],
+      "type": "rect",
+      "view": "top"
+    },
+    {
+      "component": "rim_lock",
+      "groupId": null,
+      "id": "label-top-left-rim-lock",
+      "notes": "Viewer-left top/front rim-lock/end-piece joint at the front edge.",
+      "points": [
+        {
+          "x": 288.4598944869437,
+          "y": 1374.6252355615177
+        },
+        {
+          "x": 327.5218544765318,
+          "y": 1393.7469894520693
+        }
+      ],
+      "type": "rect",
+      "view": "top"
+    },
+    {
+      "component": "rim_lock",
+      "groupId": null,
+      "id": "label-top-right-rim-lock",
+      "notes": "Viewer-right top/front rim-lock/end-piece joint at the front edge.",
+      "points": [
+        {
+          "x": 1042.9274118323378,
+          "y": 1360.46470134949
+        },
+        {
+          "x": 1083.1311775519493,
+          "y": 1394.5879507184493
+        }
+      ],
+      "type": "rect",
+      "view": "top"
+    },
+    {
+      "component": "temple",
+      "groupId": "group-temple-upper",
+      "id": "label-side-left-temple",
+      "notes": "Left side-view straight temple stem from hinge to the TT4 bend start.",
+      "points": [
+        {
+          "x": 1414.4521114783279,
+          "y": 576.2259881990472
+        },
+        {
+          "x": 2032.4521114783279,
+          "y": 611.2259881990472
+        }
+      ],
+      "type": "rect",
+      "view": "side-left"
+    },
+    {
+      "component": "temple_tip",
+      "groupId": "group-temple-tips",
+      "id": "label-side-left-temple-tip",
+      "notes": "Left side-view TT4 bent temple tip only; dashed straight construction line excluded.",
+      "points": [
+        {
+          "x": 1938.9854944218278,
+          "y": 576.3473090617472
+        },
+        {
+          "x": 2174.556899046103,
+          "y": 585.4344215337854
+        },
+        {
+          "x": 2230.126930082521,
+          "y": 620.7896460030779
+        },
+        {
+          "x": 2324.4183817242215,
+          "y": 670.0969562374594
+        },
+        {
+          "x": 2379.136039121491,
+          "y": 720.2277744972534
+        },
+        {
+          "x": 2326.0183437208284,
+          "y": 765.2298560387007
+        },
+        {
+          "x": 2232.474542513175,
+          "y": 694.4147149333091
+        },
+        {
+          "x": 2143.3442936457004,
+          "y": 622.483529878356
+        },
+        {
+          "x": 1948.6324446088656,
+          "y": 616.993724681959
+        }
+      ],
+      "type": "polygon",
+      "view": "side-left"
+    },
+    {
+      "component": "temple",
+      "groupId": "group-temple-lower",
+      "id": "label-side-right-temple",
+      "notes": "Right side-view straight temple stem from hinge to the TT4 bend start.",
+      "points": [
+        {
+          "x": 1824.0522166865417,
+          "y": 866.5874629038346
+        },
+        {
+          "x": 2340.2539363427277,
+          "y": 917.7529654375905
+        }
+      ],
+      "type": "rect",
+      "view": "side-right"
+    },
+    {
+      "component": "temple_tip",
+      "groupId": "group-temple-tips",
+      "id": "label-side-right-temple-tip",
+      "notes": "Right side-view TT4 bent temple tip only; dashed straight construction line excluded.",
+      "points": [
+        {
+          "x": 1847.5979545602265,
+          "y": 873.9393403201133
+        },
+        {
+          "x": 1837.8246164386387,
+          "y": 914.7337775660295
+        },
+        {
+          "x": 1680.7180509426419,
+          "y": 904.7509930342394
+        },
+        {
+          "x": 1612.864490768232,
+          "y": 926.164933064873
+        },
+        {
+          "x": 1447.9240770490328,
+          "y": 1058.274684061463
+        },
+        {
+          "x": 1392.7946656390568,
+          "y": 1003.5462253377632
+        },
+        {
+          "x": 1597.8397215507737,
+          "y": 888.7654644537995
+        },
+        {
+          "x": 1671.4973186134725,
+          "y": 872.5812907895875
+        }
+      ],
+      "type": "polygon",
+      "view": "side-right"
+    },
+    {
+      "component": "hinge_joint",
+      "groupId": "group-hinge-rim-locks",
+      "id": "label-side-left-hinge",
+      "notes": "Left side-view hinge/end-piece stack at the lens edge.",
+      "points": [
+        {
+          "x": 1433.7624207205643,
+          "y": 573.7360883972685
+        },
+        {
+          "x": 1516.713134697845,
+          "y": 628.9132714312178
+        }
+      ],
+      "type": "rect",
+      "view": "side-left"
+    },
+    {
+      "component": "hinge_joint",
+      "groupId": "group-hinge-rim-locks",
+      "id": "label-side-right-hinge",
+      "notes": "Right side-view hinge/end-piece stack at the lens edge.",
+      "points": [
+        {
+          "x": 2210,
+          "y": 874.5028715921393
+        },
+        {
+          "x": 2343.564105281121,
+          "y": 910
+        }
+      ],
+      "type": "rect",
+      "view": "side-right"
+    },
+    {
+      "component": "rim",
+      "groupId": "group-front-right-rim",
+      "id": "label-front-detail-right-rim",
+      "notes": "Wearer-right rim in the lower front detail view.",
+      "points": [
+        {
+          "x": 1484.1182951444252,
+          "y": 1158.2032262894083
+        },
+        {
+          "x": 1845.3413845591072,
+          "y": 1483.1563857847366
+        }
+      ],
+      "type": "rect",
+      "view": "front-detail"
+    },
+    {
+      "component": "rim",
+      "groupId": "group-front-left-rim",
+      "id": "label-front-detail-left-rim",
+      "notes": "Wearer-left rim in the lower front detail view.",
+      "points": [
+        {
+          "x": 1910.8783551300821,
+          "y": 1156.745442206473
+        },
+        {
+          "x": 2291.0937943029285,
+          "y": 1464.1481558500643
+        }
+      ],
+      "type": "rect",
+      "view": "front-detail"
+    },
+    {
+      "component": "nose_bridge",
+      "groupId": "group-nose-bridge",
+      "id": "label-front-detail-nose-bridge",
+      "notes": "VC S5158 nose bridge in lower front detail view around the DBL connector.",
+      "points": [
+        {
+          "x": 1812.7540695896034,
+          "y": 1190.8002329559754
+        },
+        {
+          "x": 1935.3009194002739,
+          "y": 1246.1513820937682
+        }
+      ],
+      "type": "rect",
+      "view": "front-detail"
+    },
+    {
+      "component": "nose_pad",
+      "groupId": null,
+      "id": "label-front-detail-right-nose-pad",
+      "notes": "Wearer-right nose pad visible inside the lower front detail rim.",
+      "points": [
+        {
+          "x": 1778.9113185882245,
+          "y": 1278.5315935853205
+        },
+        {
+          "x": 1855.9113185882245,
+          "y": 1392.5315935853205
+        }
+      ],
+      "type": "rect",
+      "view": "front-detail"
+    },
+    {
+      "component": "nose_pad",
+      "groupId": null,
+      "id": "label-front-detail-left-nose-pad",
+      "notes": "Wearer-left nose pad visible inside the lower front detail rim.",
+      "points": [
+        {
+          "x": 1902.1655993080624,
+          "y": 1272.619233455486
+        },
+        {
+          "x": 1986.1655993080624,
+          "y": 1386.619233455486
+        }
+      ],
+      "type": "rect",
+      "view": "front-detail"
+    },
+    {
+      "component": "lens_former",
+      "groupId": null,
+      "id": "label-lens-detail",
+      "notes": "Lens/former comparison detail around the lens outline and dimension callouts.",
+      "points": [
+        {
+          "x": 1497.4215825932395,
+          "y": 109.06058940985473
+        },
+        {
+          "x": 1904.31475727227,
+          "y": 449.4083918335348
+        }
+      ],
+      "type": "rect",
+      "view": "former-detail"
+    },
+    {
+      "component": "lens_former",
+      "groupId": null,
+      "id": "label-former-detail",
+      "notes": "Former outline detail with width/height callouts.",
+      "points": [
+        {
+          "x": 1994.2398974692965,
+          "y": 118.55954984099701
+        },
+        {
+          "x": 2391.7961007436465,
+          "y": 460.04254430045216
+        }
+      ],
+      "type": "rect",
+      "view": "former-detail"
+    },
+    {
+      "component": "nose_bridge",
+      "groupId": "group-nose-bridge",
+      "id": "label-bridge-detail-top",
+      "notes": "Nose Bridge Scale 1:1 VC S5158 part drawing and callout.",
+      "points": [
+        {
+          "x": 710,
+          "y": 610
+        },
+        {
+          "x": 850,
+          "y": 790
+        }
+      ],
+      "type": "rect",
+      "view": "detail"
+    },
+    {
+      "component": "end_piece",
+      "groupId": null,
+      "id": "label-end-piece-detail",
+      "notes": "End-piece/rim-lock detail near the lower top/front view corner.",
+      "points": [
+        {
+          "x": 1048.0676743485785,
+          "y": 1358.180526071062
+        },
+        {
+          "x": 1150.9819343136971,
+          "y": 1412.8738065531593
+        }
+      ],
+      "type": "rect",
+      "view": "detail"
+    },
+    {
+      "component": "browbar",
+      "groupId": "group-browbar",
+      "id": "label-user-1781939365618-0c8e26",
+      "notes": "Browbar/upper roof bar carried from the corrected VC S19005 and original VC S19003 labelled references.",
+      "points": [
+        {
+          "x": 518.7082160732202,
+          "y": 65.20068405631551
+        },
+        {
+          "x": 853.5497959490759,
+          "y": 116.33570958132604
+        }
+      ],
+      "type": "rect",
+      "view": "front-main"
+    },
+    {
+      "component": "nose_bridge",
+      "groupId": null,
+      "id": "label-user-1781939696152-8b2fc7",
+      "notes": "User-created rectangle",
+      "points": [
+        {
+          "x": 640.9806737363382,
+          "y": 1417.2373582325843
+        },
+        {
+          "x": 732.3464391171976,
+          "y": 1433.2281297169593
+        }
+      ],
+      "type": "rect",
+      "view": "front-main"
+    },
+    {
+      "component": "browbar",
+      "groupId": null,
+      "id": "label-user-1781939711668-a11d7e",
+      "notes": "User-created rectangle",
+      "points": [
+        {
+          "x": 520.3925443127741,
+          "y": 1440.231725550269
+        },
+        {
+          "x": 849.6995198720035,
+          "y": 1472.2285808049837
+        }
+      ],
+      "type": "rect",
+      "view": "front-main"
+    },
+    {
+      "component": "browbar",
+      "groupId": null,
+      "id": "label-user-1781939724122-879fbd",
+      "notes": "User-created rectangle",
+      "points": [
+        {
+          "x": 1711.6212621886343,
+          "y": 1146.8841923367474
+        },
+        {
+          "x": 2045.0715454549559,
+          "y": 1173.2397360140064
+        }
+      ],
+      "type": "rect",
+      "view": "front-main"
+    },
+    {
+      "component": "end_piece",
+      "groupId": null,
+      "id": "label-user-1781939857355-71d44a",
+      "notes": "User-created rectangle",
+      "points": [
+        {
+          "x": 265.7373088551274,
+          "y": 1392.8651056452436
+        },
+        {
+          "x": 316.15144732996254,
+          "y": 1425.282551877718
+        }
+      ],
+      "type": "rect",
+      "view": "front-main"
+    }
+  ],
+  "modelId": "VC S19001",
+  "updatedAt": "2026-06-20T07:19:13.491Z"
+}

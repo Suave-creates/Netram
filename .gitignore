@@ -1,0 +1,19 @@
+*.DS_Store
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+*.bak
+
+Metal Frame Design Studio/
+.vercel
+menu-desktop.png
+menu-mobile.png
+natalia-landing-desktop.png
+natalia-landing-mobile.png
+.playwright-mcp/
+
+# Local virtualenv and scraped caches (not source)
+.venv/
+venv/
+data/lenskart_cache/
