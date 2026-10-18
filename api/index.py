@@ -29,7 +29,7 @@ from eyewear_labeller.server import (  # noqa: E402
 )
 
 
-app = FastAPI(title="Natalia")
+app = FastAPI(title="Netram")
 
 
 def json_error(message: str, status_code: int) -> JSONResponse:

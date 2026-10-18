@@ -63,7 +63,7 @@ async function loadLibrary(partType) {
   }
   library = payload;
   selectedPartId = library.parts[0]?.id ?? null;
-  document.title = `Natalia - ${selectedTypeLabel()} Library`;
+  document.title = `Netram - ${selectedTypeLabel()} Library`;
   window.history.replaceState(null, '', `/parts?type=${encodeURIComponent(library.selectedType)}`);
   render();
   setPageState('Ready');

@@ -86,7 +86,7 @@ async function loadProject(modelId = null) {
   setDimensionValue(dom.aSize, project.dimensions.a_size);
   setDimensionValue(dom.bSize, project.dimensions.b_size);
   setDimensionValue(dom.dbl, project.dimensions.dbl);
-  document.title = `Natalia - ${project.modelId} Matcher`;
+  document.title = `Netram - ${project.modelId} Matcher`;
 
   resetViewer();
   setPageState('Ready');

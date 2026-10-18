@@ -159,7 +159,7 @@ async function loadProject(modelId = null) {
   populateComponentSelect(project.components);
   await loadPartDrawerLibraries();
   updateWorkspaceAvailability();
-  document.title = `Natalia - ${project.modelId} Labeller`;
+  document.title = `Netram - ${project.modelId} Labeller`;
   dom.viewport.setAttribute('aria-label', `${project.modelId} drawing workspace`);
   dom.frame3dPanel.setAttribute('aria-label', `${project.modelId} 3D frame`);
   dom.image.alt = `${project.modelId} source drawing`;

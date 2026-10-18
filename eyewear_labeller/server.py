@@ -421,7 +421,7 @@ def project_payload(model_id: str = DEFAULT_MODEL_ID) -> dict:
         "modelId": model_id,
         "selectedModelId": selected_model_id,
         "selectedConfiguratorId": selected_configurator_id,
-        "title": f"Natalia - {selected_model_id}",
+        "title": f"Netram - {selected_model_id}",
         "models": configurator_model_options(),
         "supports3dModel": model_id in SUPPORTED_3D_MODEL_IDS,
         "labellerUrl": f"/labeller?model={encoded_model_id}",
@@ -763,12 +763,12 @@ class LabellerHandler(BaseHTTPRequestHandler):
 
 def run(host: str, port: int) -> None:
     httpd = ThreadingHTTPServer((host, port), LabellerHandler)
-    print(f"Serving Natalia at http://{host}:{port}")
+    print(f"Serving Netram at http://{host}:{port}")
     httpd.serve_forever()
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run Natalia.")
+    parser = argparse.ArgumentParser(description="Run Netram.")
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", default=8765, type=int)
     args = parser.parse_args()

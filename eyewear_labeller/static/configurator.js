@@ -417,7 +417,7 @@ async function loadProject(modelId = null) {
   setState('Loading');
   const projectUrl = modelId ? `/api/project?model=${encodeURIComponent(modelId)}` : '/api/project';
   project = await fetchJson(projectUrl);
-  document.title = `Natalia - ${project.selectedModelId ?? project.modelId} Configurator`;
+  document.title = `Netram - ${project.selectedModelId ?? project.modelId} Configurator`;
   populateModelSelect(project.models);
   dom.labellerLink.href = project.labellerUrl;
   dom.matcherLink.href = project.matcherUrl;

@@ -47,7 +47,7 @@ async function loadProject(modelId = null) {
   dom.memoryLink.href = project.memoryUrl;
   dom.physicsLink.href = project.physicsMemoryUrl;
   renderMenuPages(project.menuPages);
-  document.title = `Natalia - ${project.modelId} Menu`;
+  document.title = `Netram - ${project.modelId} Menu`;
   setState('Ready');
 }
 

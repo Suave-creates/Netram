@@ -50,7 +50,7 @@ async function loadProject(modelId = null) {
   dom.lenskartLink.href = project.lenskartMatcherUrl;
   window.history.replaceState(null, '', project.returnPredictionUrl);
   populateInputs(project.modelId);
-  document.title = `Natalia - ${project.modelId} Return Prediction`;
+  document.title = `Netram - ${project.modelId} Return Prediction`;
   setStatus('Ready');
 }
 

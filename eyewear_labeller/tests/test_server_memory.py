@@ -110,7 +110,7 @@ class MemoryApiTest(unittest.TestCase):
     def test_project_payload_uses_landscape_image_url(self):
         payload = server.project_payload()
 
-        self.assertEqual(payload["title"], "Natalia - VC S19003")
+        self.assertEqual(payload["title"], "Netram - VC S19003")
         self.assertTrue(payload["source"]["image"].startswith("/static/assets/VC_S19003.png?orientation=landscape&v="))
         self.assertEqual(payload["labellerUrl"], "/labeller?model=VC%20S19003")
         self.assertEqual(payload["partsUrl"], "/parts?type=nose_bridge")
@@ -219,8 +219,8 @@ class MemoryApiTest(unittest.TestCase):
         page = (server.STATIC_DIR / "menu.html").read_text(encoding="utf-8")
         script = (server.STATIC_DIR / "menu.js").read_text(encoding="utf-8")
 
-        self.assertIn("<title>Natalia Menu</title>", page)
-        self.assertIn('class="app-name brand-home-link" href="/">Natalia</a>', page)
+        self.assertIn("<title>Netram Menu</title>", page)
+        self.assertIn('class="app-name brand-home-link" href="/">Netram</a>', page)
         self.assertIn('data-menu-link="labeller"', page)
         self.assertIn('data-menu-link="configurator"', page)
         self.assertIn('data-menu-link="lenskart"', page)
@@ -236,10 +236,10 @@ class MemoryApiTest(unittest.TestCase):
         self.assertNotIn("project.partsUrl", script)
         self.assertNotIn("project.matcherUrl", script)
         self.assertIn("bindPageLinkInteractions", script)
-        self.assertIn("Natalia - ${project.modelId} Menu", script)
+        self.assertIn("Netram - ${project.modelId} Menu", script)
         self.assertIn("[hidden]", (server.STATIC_DIR / "styles.css").read_text(encoding="utf-8"))
 
-    def test_natalia_brand_appears_on_every_page(self):
+    def test_netram_brand_appears_on_every_page(self):
         for page_name in [
             "menu.html",
             "index.html",
@@ -251,12 +251,12 @@ class MemoryApiTest(unittest.TestCase):
         ]:
             with self.subTest(page_name=page_name):
                 page = (server.STATIC_DIR / page_name).read_text(encoding="utf-8")
-                self.assertIn('class="app-name brand-home-link" href="/">Natalia</a>', page)
+                self.assertIn('class="app-name brand-home-link" href="/">Netram</a>', page)
 
     def test_return_prediction_page_explains_client_side_scoring(self):
         page = (server.STATIC_DIR / "return-prediction.html").read_text(encoding="utf-8")
 
-        self.assertIn("<title>Natalia Return Prediction</title>", page)
+        self.assertIn("<title>Netram Return Prediction</title>", page)
         self.assertIn('href="styles.css?v=20260620-landing3"', page)
         self.assertIn("Return prediction", page)
         self.assertIn('class="return-hero-card"', page)
@@ -292,7 +292,7 @@ class MemoryApiTest(unittest.TestCase):
     def test_labeller_page_declares_3d_child_part_controls(self):
         page = (server.STATIC_DIR / "index.html").read_text(encoding="utf-8")
 
-        self.assertIn("<title>Natalia Labeller</title>", page)
+        self.assertIn("<title>Netram Labeller</title>", page)
         self.assertIn('href="/">Menu</a>', page)
         self.assertIn('id="partsLink" class="action-button toolbar-link" href="/parts?type=nose_bridge" hidden', page)
         self.assertIn('id="matcherLink" class="action-button toolbar-link" href="/matcher" hidden', page)
